@@ -1,0 +1,156 @@
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid p-5">
+      <div class="row display-5">Booking Form</div>
+      <div class="row p-2" style="max-width: 50%">
+        <form class="form-horizontal" action="/action_page.php">
+          <div class="form-group p-1">
+            <label class="control-label col-sm-2" for="fullname"
+              >Full Name:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="fullname"
+                placeholder="Enter fullname"
+                name="fullname"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group p-1">
+            <label class="control-label col-sm-2" for="username"
+              >Mobile No:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="mobileno"
+                placeholder="Enter mobile no"
+                name="mobileno"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group p-1">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-sm-10">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+                name="email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group p-1" style="max-width: 83%">
+            <label class="control-label col-sm-2" for="email">Location:</label>
+            <select
+              class="form-select control-label"
+              aria-label="Default select example"
+            >
+              <option value="null">-- Select location --</option>
+              <option value="baneshwor">Baneshwor</option>
+              <option value="samakhusi">Samakhusi</option>
+              <option value="thapathali">Thapathali</option>
+            </select>
+          </div>
+          <div class="form-group p-1">
+            <div class="row">
+              <div class="col-4">
+                <label class="control-label"
+                  >Show Date:
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="datepicker"
+                    name="dates"
+                /></label>
+              </div>
+              <div class="col-6">
+                <label class="control-label">Show Time: </label>
+                <select
+                  class="form-select control-label"
+                  aria-label="Default select example"
+                  name="showTime"
+                >
+                  <option value="null">-- Select show time --</option>
+                  <option value="06:30:00">06:30 AM</option>
+                  <option value="10:30:00">10:30 AM</option>
+                  <option value="14:30:00">02:30 PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-add mt-2">
+            Book Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <!-- jquery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+  />
+
+  <script>
+    // text validation
+    $("#mobileno").keypress(function (e) {
+      if (isNaN(String.fromCharCode(e.which))) e.preventDefault();
+    });
+
+    $(function () {
+      $('input[name="dates"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        minYear: 2022,
+        maxYear: 2022,
+        locale: {
+          format: "YYYY-MM-DD",
+        },
+      });
+    });
+  </script>
+</html>
